@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TESTEJS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+    <p id="demo">Este conteúdo será substituído pelo javascript.</p>
+
+    <button type="button">Clique aqui!</button>
+
+    <script>
+
+        var button = document.querySelector('button');
+
+        button.onclick = function () {
+
+        document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+        }
+
+    </script>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="container">
+        <h1 id="demo">AQUI TEM UM TEXTO</h1>
+        <button id="primeiro" type="button">PRIMEIRO CONTEUDO</button>
+    </div>
+    <script src="script.js"></script>
+
+    <br>
+    <br>
+
+
+    <div class="container">
+        <button type="button" onclick='document.getElementById("demo").innerHTML =
+    "Hello JavaScript!"'>Click Me!</button>
+    </div>
+
+
+
+    
+ 
+
+    
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+
+</html>
