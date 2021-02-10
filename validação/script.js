@@ -1,18 +1,117 @@
-var idadeLuiz = 24;
-var idadeCarlos = 24;
-var idadeJose = 10;
+var objetoErroNome = document.getElementById("erroNome");
+var objetoErroIdade = document.getElementById("erroIdade");
+var objetoErroNaturalidade = document.getElementById("erroNaturalidade");
+var objetoNome = document.getElementById("nome");
+var objetoErroAntecedentes = document.getElementById("erroAntecedentes");
 
 
+function cadastrar() {
 
-console.log(idadeLuiz + idadeCarlos - idadeJose)
+    var objetoIdade = document.getElementById("idade");
+    var objetoNaturalidade = document.getElementById("naturalidade");
+    var objetoAntecedentes = document.getElementById("antecedentes");
 
-for (var i = 0; i <= idadeLuiz; i++) {
-    console.log(i)
+    if (validarNome(objetoNome.value)) {
+        if (validarIdade(objetoIdade.value)) {
+            if (validarNaturalidade(objetoNaturalidade.value)) {
+                if(validarAntecedentes(objetoAntecedentes.checked)) {
+
+                }
+
+            }
+        }
+    }
 }
+
+
+
+
+
+
+
+
+function validarNome() {
+    if (objetoNome.value != "") {
+        return true
+    }
+
+    objetoErroNome.innerHTML = "nome nao pode ser vazio";
+
+
+}
+
+function validarIdade(idade) {
+    if (idade >= 18) {
+        objetoErroIdade.innerHTML = "";
+
+        return true;
+    }
+    objetoErroIdade.innerHTML = "Idade insuficiente para o cadastro";
+
+    return false;
+
+}
+
+function validarNaturalidade(naturalidade) {
+    if (naturalidade === "brasileiro") {
+        return true
+    }
+
+
+
+    objetoErroNaturalidade.innerHTML = "Naturalidade não aceita."
+    return false;
+
+}
+
+
+
+function validarAntecedentes(antecedentes) {
+    if (antecedentes) {
+        objetoErroAntecedentes.innerHTML = "Voce possui antecedentes criminais."
+        return false;
+
+    }
+
+    
+    return true;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 OPERACOES SIMPLES
-*/
+
 
 var primeiroNumero = 2;
 var segundoNumero = 4;
@@ -38,12 +137,11 @@ console.log("multiplicacao: " + resultado);
 
 var media = (primeiroNumero + segundoNumero) / 2;
 console.log("media: " + media)
+*/
 
 
 /*
 ARRAYS
-*/
-
 
 var listaDeNomes = ["joao", 100, "matheus"];
 console.log(listaDeNomes)
@@ -91,6 +189,8 @@ if (idadeFilho != 14) {
     console.log("a idade do filho é 14 anos")
 }
 
+*/
+
 
 
 
@@ -104,7 +204,7 @@ ATRAVES DO JS, CRIE UM CODIGO QUE RETORNE AO USUARIO SE ELE PODE OU NAO SE CADAS
 3 - PRECISA SER BRASILEIRO OU ARGENTINO
 
 OBS: O CODIGO DEVE MOSTRAR AO USUARIO O MOTIVO PELO QUAL NAO PODE SER CADASTRADO
-*/
+
 
 var cadastro = {
     nome: "carlos",
@@ -112,30 +212,6 @@ var cadastro = {
     idade: 25,
     nacionalidade: "brasileiro"
 }
-
-//1a forma
-
-
-if (cadastro.antecedentes == false) {
-    console.log("Antecedentes aprovados")
-} else {
-    console.log("Antecedentes nao aprovados.")
-}
-
-if (cadastro.idade >= 18) {
-    console.log("Sua idade foi aprovada!")
-} else {
-    console.log("Sua idade não foi aprovada.")
-}
-
-if (cadastro.nacionalidade == "brasileiro") {
-    console.log("nacionalidade aprovada")
-} else {
-    console.log("nacionalidade nao aprovada.")
-}
-
-//2a forma
-
 
 if (cadastro.antecedentes == false) {
     if (cadastro.idade >= 18) {
@@ -151,59 +227,60 @@ if (cadastro.antecedentes == false) {
 } else {
     console.log("antecedentes negados")
 }
-
-//3a forma
-
-
-if (cadastro.antecedentes == false && cadastro.idade >= 18 && cadastro.nacionalidade == "brasileiro") {
-    console.log("Seu cadastro foi aprovado")
-} else {
-    console.log("Cadastro nao aprovado")
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 
 /*
+FUNÇÃO
+
+function soma (a, b) {
+    return a + b
+}
+
+var resultado = soma(4,2);
+var resultado1 = soma(8, 8);
+
+console.log(resultado)
+console.log(resultado1)
+
+function subtracao (a, b) {
+    return a - b
+}
+
+var resultadoSub = subtracao(4,2);
+var resultadoSub1 = subtracao(8, 5);
+
+console.log(resultadoSub)
+console.log(resultadoSub1)
+
+function divisao (a, b) {
+    return a / b
+}
+
+var resultadoDiv = divisao(4,2);
+var resultadoDiv1 = divisao(8, 2);
+
+console.log(resultadoDiv)
+console.log(resultadoDiv1)
+
+function multiplicacao (a, b) {
+    return a * b
+}
+
+var resultadoMulti = multiplicacao(4,2);
+var resultadoMulti1 = multiplicacao(8, 5);
+
+console.log(resultadoMulti)
+console.log(resultadoMulti1)
+
+*/
 
 
+/*
 var primeiro = document.getElementById('primeiro');
 
 primeiro.onclick = function() {
     alert('OPS')
 }
-
-
 */
