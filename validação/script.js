@@ -15,6 +15,7 @@ function cadastrar() {
         if (validarIdade(objetoIdade.value)) {
             if (validarNaturalidade(objetoNaturalidade.value)) {
                 if(validarAntecedentes(objetoAntecedentes.checked)) {
+                    alert ("cadastro concluido")
 
                 }
 
@@ -32,6 +33,8 @@ function cadastrar() {
 
 function validarNome() {
     if (objetoNome.value != "") {
+        objetoErroNome.innerHTML = "";
+
         return true
     }
 
