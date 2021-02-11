@@ -6,7 +6,9 @@ var objetoAlertasenha = document.getElementById("alertaSenha");
 
 
 function registrar() {
-
+    if (compararSenhas()){
+        alert("cadastro concluido")
+    }
 
 }
 
@@ -18,11 +20,11 @@ function compararSenhas() {
             objetoAlertasenha.innerHTML = "senhas nao sao iguais"
 
         }
-        return true;
+        return false;
 
     }
     objetoAlertasenha.innerHTML = ""
-    return false;
+    return true;
 
 }
 
