@@ -12,19 +12,99 @@ function registrar() {
 
 }
 
-
-
 function compararSenhas() {
-    if (objetoPrimeiraSenha.value != objetoSegundaSenha.value) {
-        if (objetoSegundaSenha.value != "") {
+    if (objetoPrimeiraSenha.value != "" || objetoSegundaSenha.value != "" ) {
+        if (objetoPrimeiraSenha.value != objetoSegundaSenha.value) {
+            objetoAlertasenha.innerHTML = "Senhas nao sao iguais"
+            return false;
+        } else {
+            objetoAlertasenha.innerHTML = ""
+            return true
+        }
+        
+    }
+    return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+function compararSenhas() {
+    if (objetoSegundaSenha.value != "" || objetoPrimeiraSenha.value != "") {
+        if (objetoPrimeiraSenha.value != objetoSegundaSenha.value) {
             objetoAlertasenha.innerHTML = "senhas nao sao iguais"
 
-        }
-        return false;
+            return false;
+        }else{
+            objetoAlertasenha.innerHTML = ""
 
+            return true
+        }
     }
-    objetoAlertasenha.innerHTML = ""
-    return true;
+
+    return false;
 
 }
 
+*/
