@@ -1,39 +1,57 @@
+var token = window.localStorage.getItem("key")
+
+if(token != null) {
+    window.location.href = "../home.html"
+}
+
+
 var objetoEmail = document.getElementById("email");
 var objetoSenha = document.getElementById("senha");
 var objetoAlertaLogin = document.getElementById("alertaLogin");
 var objetoFazerLogin = document.getElementById("fazerLogin")
 
 
+
 function fazerLogin() {
 
-        var email = objetoEmail.value
-        var senha = objetoSenha.value
+    var email = document.getElementById('email').value
+    var senha = document.getElementById('senha').value
+    
+    var usuario = { email: email, password: senha }
 
-        var usuario = { email: email, password: senha }
+    var usuarioJson = JSON.stringify(usuario)
 
-        var usuarioJson = JSON.stringify(usuario)
+    $.ajax({
 
-        $.ajax({
-
-            url: "http://escolarapp2.herokuapp.com/account/login/",
-            contentType: "application/json",
-            cache: false,
-            method: 'POST',
-            dataType: 'json',
-            data: usuarioJson,
-            success: function (objetoToken) {
-                console.log(objetoToken)
-                /*
-                window.location.href = "../home.html"
-                */
-            },
-            error: function (error) {
-                console.log(error)
-            }
+        url: "http://escolarapp2.herokuapp.com/account/login/",
+        contentType: "application/json",
+        cache: false,
+        method: 'POST',
+        dataType: 'json',
+        data: usuarioJson,
+        success: function (objetoToken) {
+            console.log(objetoToken)
 
 
+            window.localStorage.setItem("key", objetoToken.key)
 
-        });
+            var informacao = window.localStorage.getItem("key")
+
+            console.log(informacao)
+
+
+
+            /*
+            window.location.href = "../home.html"
+            */
+        },
+        error: function (error) {
+            console.log(error)
+        }
+
+
+
+    });
 
 }
 
@@ -48,3 +66,8 @@ function validarLogin() {
     }
 }
 
+function  logoffApi(){
+    window.localStorage.removeItem("key");
+    console.log("indo para index")
+    window.location.href ="/sobrenos.html"
+}
