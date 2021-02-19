@@ -1,110 +1,50 @@
 var objetoEmail = document.getElementById("email");
-var objetoPrimeiraSenha = document.getElementById("primeiraSenha");
-var objetoSegundaSenha = document.getElementById("segundaSenha");
-var objetoRegistrar = document.getElementById("registrar");
-var objetoAlertasenha = document.getElementById("alertaSenha");
+var objetoSenha = document.getElementById("senha");
+var objetoAlertaLogin = document.getElementById("alertaLogin");
+var objetoFazerLogin = document.getElementById("fazerLogin")
 
 
-function registrar() {
-    if (compararSenhas()){
-        alert("cadastro concluido")
-    }
+function fazerLogin() {
+
+        var email = objetoEmail.value
+        var senha = objetoSenha.value
+
+        var usuario = { email: email, password: senha }
+
+        var usuarioJson = JSON.stringify(usuario)
+
+        $.ajax({
+
+            url: "http://escolarapp2.herokuapp.com/account/login/",
+            contentType: "application/json",
+            cache: false,
+            method: 'POST',
+            dataType: 'json',
+            data: usuarioJson,
+            success: function (objetoToken) {
+                console.log(objetoToken)
+                /*
+                window.location.href = "../home.html"
+                */
+            },
+            error: function (error) {
+                console.log(error)
+            }
+
+
+
+        });
 
 }
 
-function compararSenhas() {
-    if (objetoPrimeiraSenha.value != "" || objetoSegundaSenha.value != "" ) {
-        if (objetoPrimeiraSenha.value != objetoSegundaSenha.value) {
-            objetoAlertasenha.innerHTML = "Senhas nao sao iguais"
-            return false;
-        } else {
-            objetoAlertasenha.innerHTML = ""
-            return true
-        }
-        
+function validarLogin() {
+    if (objetoEmail.value == "" || objetoSenha.value == "") {
+        objetoAlertaLogin.innerHTML = "Email ou Senha vazios"
+        return false
+    } else {
+        objetoAlertaLogin.innerHTML = ""
+        return true
+
     }
-    return false;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-function compararSenhas() {
-    if (objetoSegundaSenha.value != "" || objetoPrimeiraSenha.value != "") {
-        if (objetoPrimeiraSenha.value != objetoSegundaSenha.value) {
-            objetoAlertasenha.innerHTML = "senhas nao sao iguais"
-
-            return false;
-        }else{
-            objetoAlertasenha.innerHTML = ""
-
-            return true
-        }
-    }
-
-    return false;
-
-}
-
-*/
