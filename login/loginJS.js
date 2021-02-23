@@ -1,14 +1,11 @@
-var token = window.localStorage.getItem("key")
 
-if(token != null) {
-    window.location.href = "../home.html"
-}
 
 
 var objetoEmail = document.getElementById("email");
 var objetoSenha = document.getElementById("senha");
 var objetoAlertaLogin = document.getElementById("alertaLogin");
-var objetoFazerLogin = document.getElementById("fazerLogin")
+var objetoFazerLogin = document.getElementById("fazerLogin");
+var objetoLogoff = document.getElementById("logoffApi");
 
 
 
@@ -40,7 +37,11 @@ function fazerLogin() {
             console.log(informacao)
 
 
+            var token = window.localStorage.getItem("key")
 
+            if(token != null) {
+                window.location.href = "../home.html"
+            }
             /*
             window.location.href = "../home.html"
             */
@@ -69,5 +70,5 @@ function validarLogin() {
 function  logoffApi(){
     window.localStorage.removeItem("key");
     console.log("indo para index")
-    window.location.href ="/sobrenos.html"
+    window.location.href = "sobrenos.html"
 }

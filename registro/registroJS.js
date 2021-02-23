@@ -118,16 +118,6 @@ function criarUsuario(senha, email) {
 
 
 
-
-
-
-
-
-
-
-
-
-
 /*
 function compararSenhas() {
     if (objetoSegundaSenha.value != "" || objetoPrimeiraSenha.value != "") {
