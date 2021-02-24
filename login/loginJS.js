@@ -1,12 +1,8 @@
-
-
-
 var objetoEmail = document.getElementById("email");
 var objetoSenha = document.getElementById("senha");
 var objetoAlertaLogin = document.getElementById("alertaLogin");
 var objetoFazerLogin = document.getElementById("fazerLogin");
 var objetoLogoff = document.getElementById("logoffApi");
-
 
 
 function fazerLogin() {
@@ -67,8 +63,13 @@ function validarLogin() {
     }
 }
 
-function  logoffApi(){
-    window.localStorage.removeItem("key");
-    console.log("indo para index")
-    window.location.href = "sobrenos.html"
-}
+
+
+
+/*
+$(function(){
+    $("botaoDeslogar").class = "aparecendo";
+
+})
+*/
+
