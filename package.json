@@ -1,0 +1,11 @@
+{
+    "name": "organicosbrasil",
+    "version": "1.0.0",
+    "description": "Project Description",
+    "scripts":{
+        "start": "serve"
+    },
+    "dependencies": {
+        "serve": "11.3.2"
+    }
+}
