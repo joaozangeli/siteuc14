@@ -1,3 +1,11 @@
 .sumiu {
     display: none;
 }
+
+.navbar-default {
+    background: linear-gradient(55deg, tomato,purple);
+}
+
+footer {
+    margin-top: 50px;
+}
