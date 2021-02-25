@@ -2,7 +2,7 @@
     "name": "organicosbrasil",
     "version": "1.0.0",
     "description": "Project Description",
-    "scripts":{
+    "scripts": {
         "start": "serve"
     },
     "dependencies": {
