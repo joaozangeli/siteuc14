@@ -36,7 +36,7 @@ function fazerLogin() {
             var token = window.localStorage.getItem("key")
 
             if(token != null) {
-                window.location.href = "../home.html"
+                window.location.href = "../index.html"
             }
             /*
             window.location.href = "../home.html"
