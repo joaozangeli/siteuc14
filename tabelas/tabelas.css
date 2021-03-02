@@ -1,0 +1,22 @@
+thead {
+    color: white;
+    background: #544290;
+}
+tbody{
+    border-left: solid #ccc 1px;
+    border-right: solid #ccc 1px;
+
+}
+table tr:last-child td:first-child {
+    border-top-left-radius: 10px;
+
+}
+
+table tr:last-child td:last-child {
+    border-top-right-radius: 10px;
+}
+tr, td {
+    padding: 30px;
+    text-align: center;
+}
+

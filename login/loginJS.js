@@ -9,7 +9,7 @@ function fazerLogin() {
 
     var email = document.getElementById('email').value
     var senha = document.getElementById('senha').value
-    
+
     var usuario = { email: email, password: senha }
 
     var usuarioJson = JSON.stringify(usuario)
@@ -24,9 +24,9 @@ function fazerLogin() {
         data: usuarioJson,
         success: function (objetoToken) {
             console.log(objetoToken)
+            const key = "Token " + objetoToken.key;
 
-
-            window.localStorage.setItem("key", objetoToken.key)
+            window.localStorage.setItem("key", key)
 
             var informacao = window.localStorage.getItem("key")
 
@@ -35,7 +35,7 @@ function fazerLogin() {
 
             var token = window.localStorage.getItem("key")
 
-            if(token != null) {
+            if (token != null) {
                 window.location.href = "../index.html"
             }
             /*
